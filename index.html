@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="timeAndColor.js"></script>
+    <script type="text/javascript" src="crowd.js"></script>
+    <title>学食の混雑状況を計る電光掲示板</title>
+</head>
+<!-- ここにCSSを書く -->
+<style>
+    body {
+        background-color: #0C4DDA;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        font-family: 'Arial', sans-serif;
+        line-height: 1.2;
+    }
+    .header-container {
+        color: #fff;
+        font-size: 15px;
+    }
+    table {
+        background-color: #fff;
+        width: 100%;
+        border-collapse: collapse;
+    }
+    td {
+        width: 33%;
+        border: 1px solid #000;
+        padding: 10px;
+    }
+
+    .low { background-color: #6AFF00; }
+    .medium { background-color: #FFFF00; }
+    .high { background-color: #FFAE00; }
+    .super-high { background-color: #FF0000; }
+
+    .description {
+        color: #fff;
+    }
+</style>
+<!-- ここにjavascriptを書く -->
+
+<!-- ここにHTMLを書く -->
+<body onload="updateTimeAndColor(), updateCongestion()">
+
+    <div class="header-container">
+        <h1>学食混雑状況</h1>
+        <span id="date"></span>
+        <span id="time"></span>
+    </div>
+
+    <table class="table" id="congestionTable">
+        <tr>
+            <th>店名</th>
+            <th>場所</th>
+            <th>混雑度合い</th>
+        </tr>
+        <tr>
+            <td>ラーメン壱馬力</td>
+            <td>並楽館1階</td>
+            <td class="congestion">10%</td>
+        </tr>
+        <tr>
+            <td>ふじカツ</td>
+            <td>並楽館1階</td>
+            <td class="congestion">20%</td>
+        </tr>
+        <tr>
+            <td>MIYAKO製麺</td>
+            <td>並楽館2階</td>
+            <td class="congestion">30%</td>
+        </tr>
+        <tr>
+            <td>LIBRE</td>
+            <td>並楽館3階</td>
+            <td class="congestion">40%</td>
+        </tr>
+        <tr>
+            <td>すき家</td>
+            <td>真理館1階</td>
+            <td class="congestion">50%</td>
+        </tr>
+        <tr>
+            <td>キッチンサン</td>
+            <td>真理館1階</td>
+            <td class="congestion">60%</td>
+        </tr>
+        <tr>
+            <td>スガキヤ</td>
+            <td>真理館1階</td>
+            <td class="congestion">70%</td>
+        </tr>
+        <tr>
+            <td>むすびキッチン</td>
+            <td>雄飛館2階</td>
+            <td class="congestion">80%</td>
+        </tr>
+        <tr>
+            <td>やさい食堂イチマルイチ</td>
+            <td>10号館1階</td>
+            <td class="congestion">90%</td>
+        </tr>
+    </table>
+    <div class="description">
+        <p>学食混雑状況掲示板：混雑度合いのパーセンテージは学食アイキャッチの画像を参考に画像処理を行い算出する。</p>
+        <p>それぞれの学食で行われているイベントをこの辺で流す。</p>
+    </div>
+</body>
+</html>
