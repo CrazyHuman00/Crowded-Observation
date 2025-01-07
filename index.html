@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="text/javascript" src="timeAndColor.js"></script>
-    <script type="text/javascript" src="crowd.js"></script>
+    <script type="text/javascript" src="sandbox/timeAndColor.js"></script>
+    <script type="text/javascript" src="sandbox/congestion.js"></script>
+    
+    <script async src="https://docs.opencv.org/4.x/opencv.js" onload="main();"></script>
+    
     <title>学食の混雑状況を計る電光掲示板</title>
 </head>
 <!-- ここにCSSを書く -->
@@ -42,9 +45,11 @@
     }
 </style>
 <!-- ここにjavascriptを書く -->
+<script>
 
+</script>
 <!-- ここにHTMLを書く -->
-<body onload="updateTimeAndColor(), updateCongestion()">
+<body onload="updateTimeAndColor()">
 
     <div class="header-container">
         <h1>学食混雑状況</h1>
