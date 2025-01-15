@@ -5,8 +5,11 @@ __author__ = 'Asakura Hiroto'
 __version__ = '1.0.0'
 __date__ = '2025/01/14 (Created: 2025/01/14)'
 
+""" 学食アイキャッチから画像を取得する。 """
+
 import os
 import requests
+from path import get_image_path
 
 def download_image(url, save_path):
     response = requests.get(url)
@@ -17,16 +20,16 @@ def download_image(url, save_path):
     else:
         print("Failed to download image")
 
-def execute_download(download_image_dir):
-    download_image(os.environ['YASAI_URL'], os.path.join(download_image_dir, 'yasai/yasai.png'))
-    download_image(os.environ['MIYAKO_1_URL'], os.path.join(download_image_dir, 'miyako1/miyako1.png'))
-    download_image(os.environ['MIYAKO_2_URL'], os.path.join(download_image_dir, 'miyako2/miyako2.png'))
-    download_image(os.environ['FUJI_1_URL'], os.path.join(download_image_dir, 'fujikatsu/fuji.png'))
-    download_image(os.environ['MUSUBI_1_URL'], os.path.join(download_image_dir, 'musubi1/musubi1.png'))
-    download_image(os.environ['MUSUBI_2_URL'], os.path.join(download_image_dir, 'musubi2/musubi2.png'))
-    download_image(os.environ['ICHIBARIKI_URL'], os.path.join(download_image_dir, 'ichibariki/ichibariki.png'))
-    download_image(os.environ['LIBRE_1_URL'], os.path.join(download_image_dir, 'libre1/libre1.png'))
-    download_image(os.environ['LIBRE_2_URL'], os.path.join(download_image_dir, 'libre2/libre2.png'))
-    download_image(os.environ['SUN_URL'], os.path.join(download_image_dir, 'sun/sun.png'))
-    download_image(os.environ['SUKIYA_URL'], os.path.join(download_image_dir, 'sukiya/sukiya.png'))
-    download_image(os.environ['T1F_URL'], os.path.join(download_image_dir, 'T1F/T1F.png'))
+def execute_download():
+    download_image(os.environ['FUJI_1_URL'], get_image_path(0))
+    download_image(os.environ['ICHIBARIKI_URL'], get_image_path(1))
+    download_image(os.environ['LIBRE_1_URL'], get_image_path(2))
+    download_image(os.environ['LIBRE_2_URL'], get_image_path(3))
+    download_image(os.environ['MIYAKO_1_URL'], get_image_path(4))
+    download_image(os.environ['MIYAKO_2_URL'], get_image_path(5))
+    download_image(os.environ['MUSUBI_1_URL'], get_image_path(6))
+    download_image(os.environ['MUSUBI_2_URL'], get_image_path(7))
+    download_image(os.environ['SUKIYA_URL'], get_image_path(8))
+    download_image(os.environ['SUN_URL'], get_image_path(9))
+    download_image(os.environ['T1F_URL'], get_image_path(10))
+    download_image(os.environ['YASAI_URL'], get_image_path(11))

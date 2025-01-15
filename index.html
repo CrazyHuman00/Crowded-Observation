@@ -14,7 +14,6 @@
         text-align: center;
         margin: 0;
         padding: 0;
-        font-family: "Arial", sans-serif;
         line-height: 1.2;
     }
 
@@ -27,12 +26,13 @@
         background-color: #fff;
         width: 100%;
         border-collapse: collapse;
+        font-size: 25px;
     }
 
     td {
         width: 33%;
         border: 1px solid #000;
-        padding: 10px;
+        padding: 15px;
     }
 
     .low {
@@ -69,13 +69,14 @@
                 }
             })
             .catch(error => console.error('Error:', error));
-    }, 10000); // 1分ごとにリクエストを送信
+    }, 60000 * 3); // 3分ごとに画像をダウンロード
 </script>
 <!-- ここにHTMLを書く -->
 
 <body onload="updateTimeAndColor()">
     <div class="header-container">
         <h1>学食混雑状況</h1>
+        <span>現在時刻</span>
         <span id="date"></span>
         <span id="time"></span>
     </div>
@@ -89,54 +90,51 @@
         <tr>
             <td>ラーメン壱馬力</td>
             <td>並楽館1階</td>
-            <td class="congestion">10%</td>
+            <td class="ichibariki">49.88%</td>
         </tr>
         <tr>
             <td>ふじカツ</td>
             <td>並楽館1階</td>
-            <td class="congestion">10%</td>
+            <td class="fujikatsu">47.46%</td>
         </tr>
         <tr>
             <td>MIYAKO製麺</td>
             <td>並楽館2階</td>
-            <td class="congestion">30%</td>
+            <td class="miyako2">52.13%</td>
         </tr>
         <tr>
             <td>LIBRE</td>
             <td>並楽館3階</td>
-            <td class="congestion">40%</td>
+            <td class="libre2">51.13%</td>
         </tr>
         <tr>
             <td>すき家</td>
             <td>真理館1階</td>
-            <td class="congestion">50%</td>
+            <td class="sukiya">49.00%</td>
         </tr>
         <tr>
             <td>キッチンサン</td>
             <td>真理館1階</td>
-            <td class="congestion">60%</td>
+            <td class="sun">52.36%</td>
         </tr>
         <tr>
             <td>スガキヤ</td>
             <td>真理館1階</td>
-            <td class="congestion">70%</td>
+            <td class="sun">52.36%</td>
         </tr>
         <tr>
             <td>むすびキッチン</td>
             <td>雄飛館2階</td>
-            <td class="congestion">80%</td>
+            <td class="musubi2">49.28%</td>
         </tr>
         <tr>
             <td>やさい食堂イチマルイチ</td>
             <td>10号館1階</td>
-            <td class="congestion">90%</td>
+            <td class="yasai">51.37%</td>
         </tr>
     </table>
     <div class="description">
-        <p>
-            学食混雑状況掲示板：混雑度合いのパーセンテージは学食アイキャッチの画像を参考に画像処理を行い算出する。
-        </p>
-        <p>それぞれの学食で行われているイベントをこの辺で流す。</p>
+        <p>学食混雑状況掲示板：混雑度合いのパーセンテージは学食アイキャッチの画像を参考に画像処理を行い算出する。</p>
     </div>
 </body>
 

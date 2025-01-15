@@ -1,3 +1,5 @@
+const e = require("express");
+
 // 現在の日付を取得する
 function getToday() {
     var today = new Date();
@@ -20,19 +22,37 @@ function getTime() {
 
 // 混雑度合いによって背景色を変える
 function updateTableColors() {
-    const rows = document.querySelectorAll("#congestionTable .congestion");
-    rows.forEach((row) => {
-        const value = parseInt(row.textContent);
-        if (value < 30) {
-            row.className = "low";
-        } else if (value < 50) {
-            row.className = "medium";
-        } else if (value < 79) {
-            row.className = "high";
-        } else {
-            row.className = "super-high";
-        }
+    var restaurant = new Array(
+        "fujikatsu",
+        "ichibariki",
+        "libre1",
+        "libre2",
+        "miyako1",
+        "miyako2",
+        "musubi1",
+        "musubi2",
+        "sukiya",
+        "sun",
+        "T1F",
+        "yasai"
+    );
+
+    restaurant.forEach(element => {
+        const rows = document.querySelectorAll("#congestionTable ." + element);
+        rows.forEach((row) => {
+            const value = parseInt(row.textContent);
+            if (value < 30) {
+                row.className = "low";
+            } else if (value < 50) {
+                row.className = "medium";
+            } else if (value < 79) {
+                row.className = "high";
+            } else {
+                row.className = "super-high";
+            }
+        });
     });
+
 }
 
 // 1秒ごとに日付と時刻を更新する
