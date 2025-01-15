@@ -12,7 +12,7 @@ cron.schedule('*/3 11-14 * * *', () => {
     if (currentHour === 14 && currentMinute > 30) return;
 
     console.log('Running scheduled task');
-    exec('python download_image.py', (error, stdout, stderr) => {
+    exec('python py/main.py', (error, stdout, stderr) => {
         if (error) {
             console.error(`Error executing Python script: ${error.message}`);
             return;
@@ -26,7 +26,7 @@ cron.schedule('*/3 11-14 * * *', () => {
 });
 
 app.get('/', (req, res) => {
-    exec('python download_image.py', (error, stdout, stderr) => {
+    exec('python py/main.py', (error, stdout, stderr) => {
         if (error) {
             console.error(`Error executing Python script: ${error.message}`);
             return res.json({ success: false });

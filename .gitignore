@@ -3,3 +3,4 @@
 *.png
 .env
 node_modules/
+__paycache__/

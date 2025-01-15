@@ -5,7 +5,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script type="text/javascript" src="timeAndColor.js"></script>
-    <script type="text/javascript" src="updatePython.js"></script>
     <title>学食の混雑状況を計る電光掲示板</title>
 </head>
 <!-- ここにCSSを書く -->
@@ -57,8 +56,23 @@
     }
 </style>
 <!-- ここにjavascriptを書く -->
-<script></script>
+<script>
+    // 定期的にサーバーにリクエストを送信して画像をダウンロード
+    setInterval(() => {
+        fetch('http://localhost:3000')
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    document.getElementById('status').innerText = '画像が正常にダウンロードされました';
+                } else {
+                    document.getElementById('status').innerText = '画像のダウンロードに失敗しました';
+                }
+            })
+            .catch(error => console.error('Error:', error));
+    }, 10000); // 1分ごとにリクエストを送信
+</script>
 <!-- ここにHTMLを書く -->
+
 <body onload="updateTimeAndColor()">
     <div class="header-container">
         <h1>学食混雑状況</h1>
