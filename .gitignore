@@ -1,6 +1,7 @@
 *.jpg
 *.jpeg
 *.png
+*.zip
 .env
 node_modules/
 __paycache__/

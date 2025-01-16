@@ -26,7 +26,7 @@
         background-color: #fff;
         width: 100%;
         border-collapse: collapse;
-        font-size: 25px;
+        font-size: 18px;
     }
 
     td {
@@ -54,6 +54,10 @@
     .description {
         color: #fff;
     }
+
+    .event {
+        color: #fff;
+    }
 </style>
 <!-- ここにjavascriptを書く -->
 <script>
@@ -79,6 +83,10 @@
         <span>現在時刻</span>
         <span id="date"></span>
         <span id="time"></span>
+    </div>
+
+    <div class="description">
+        <p>※学食混雑状況掲示板：混雑度合いのパーセンテージは学食アイキャッチの画像を基に3分毎で画像処理を行い算出しています。</p>
     </div>
 
     <table class="table" id="congestionTable">
@@ -133,8 +141,10 @@
             <td class="yasai">51.37%</td>
         </tr>
     </table>
-    <div class="description">
-        <p>学食混雑状況掲示板：混雑度合いのパーセンテージは学食アイキャッチの画像を参考に画像処理を行い算出する。</p>
+
+    <div class="event">
+        <h2>イベント情報</h2>
+        <p>すき家で新商品が登場！</p>
     </div>
 </body>
 
